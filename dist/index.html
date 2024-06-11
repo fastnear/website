@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html data-scheme="light" dir="ltr" lang="en">
+<head>
+	<title>FASTNEAR - We're building the fastest infrastructure for NEAR Protocol</title>
+
+	<meta charset="utf-8"/>
+	<!--[if IE]>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><![endif]-->
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+	<meta content="FASTNEAR provides private dedicated RPC nodes and ultra-fast API endpoints for aggregated account data. FASTNEAR also offers complete historical blockchain data and custom indexer solutions for processing and aggregating blockchain information." name="description"/>
+	<link rel="icon" type="image/png" href="/favicon.png" />
+	<link rel="apple-touch-icon" href="/app.png" />
+
+	<!-- Css -->
+	<link href="./css/style.css" rel="stylesheet"/>
+
+	<!-- Dark Mode JS -->
+	<script src="./js/darkMode.bundle.js"></script>
+</head>
+
+<body
+    class="overflow-x-hidden font-body text-jacarta-500 dark:bg-jacarta-900"
+    itemscope
+	itemtype="http://schema.org/WebPage"
+>
+<!-- Header -->
+<header class="js-page-header fixed top-0 z-20 w-full backdrop-blur transition-colors">
+	<div class="flex items-center px-6 py-6 xl:px-24">
+		<!-- Logo -->
+		<a class="shrink-0" href="index.html">
+			<img alt="FASTNEAR" class="max-h-7 dark:hidden" src="img/logo.png"/>
+			<img alt="FASTNEAR" class="hidden max-h-7 dark:block" src="img/logo_white.png"/>
+		</a>
+
+		<!-- Menu / Actions -->
+		<div
+				class="js-mobile-menu invisible lg:visible fixed inset-0 z-10 ml-auto items-center bg-white opacity-0 dark:bg-jacarta-800 lg:relative lg:inset-auto lg:flex lg:bg-transparent lg:opacity-100 dark:lg:bg-transparent"
+		>
+			<!-- Mobile Logo / Menu Close -->
+			<div
+					class="t-0 fixed left-0 z-10 flex w-full items-center justify-between bg-white p-6 dark:bg-jacarta-800 lg:hidden"
+			>
+				<!-- Mobile Logo -->
+				<a class="shrink-0" href="index.html">
+					<img alt="FASTNEAR" class="max-h-7 dark:hidden" src="img/logo.png"/>
+					<img alt="FASTNEAR" class="hidden max-h-7 dark:block" src="img/logo_white.png"/>
+				</a>
+
+				<!-- Mobile Menu Close -->
+				<button
+						aria-label="close mobile menu"
+						class="js-mobile-close group ml-2 flex h-10 w-10 items-center justify-center rounded-full border border-jacarta-100 bg-white transition-colors hover:border-transparent hover:bg-accent focus:border-transparent focus:bg-accent dark:border-transparent dark:bg-white/[.15] dark:hover:bg-accent"
+				>
+					<svg
+							class="h-4 w-4 fill-jacarta-700 transition-colors group-hover:fill-white group-focus:fill-white dark:fill-white"
+							height="24"
+							viewBox="0 0 24 24"
+							width="24"
+							xmlns="http://www.w3.org/2000/svg"
+					>
+						<path d="M0 0h24v24H0z" fill="none"/>
+						<path
+								d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"
+						/>
+					</svg>
+				</button>
+			</div>
+
+			<!-- Primary Nav -->
+			<div class="relative mt-24 mb-8 w-full lg:hidden"></div>
+
+			<nav class="navbar w-full">
+				<ul class="flex flex-col lg:flex-row">
+					<li class="group">
+						<a class="flex items-center justify-between py-3.5 font-display text-base text-jacarta-700 hover:text-accent focus:text-accent dark:text-white dark:hover:text-accent dark:focus:text-accent lg:px-5"
+						   href="/index.html"
+						>Home</a
+						>
+					</li>
+					<li class="group">
+						<a class="flex items-center justify-between py-3.5 font-display text-base text-jacarta-700 hover:text-accent focus:text-accent dark:text-white dark:hover:text-accent dark:focus:text-accent lg:px-5"
+						   href="/services.html"
+						>Services</a
+						>
+					</li>
+					<li class="group">
+						<a class="flex items-center justify-between py-3.5 font-display text-base text-jacarta-700 hover:text-accent focus:text-accent dark:text-white dark:hover:text-accent dark:focus:text-accent lg:px-5"
+						   href="/contact.html"
+						>Contact Us</a
+						>
+					</li>
+				</ul>
+			</nav>
+
+			<!-- Mobile Connect Wallet / Socials -->
+			<div class="mt-10 w-full lg:hidden">
+				<hr class="my-5 h-px border-0 bg-jacarta-100 dark:bg-jacarta-600"/>
+
+				<!-- Socials -->
+				<div class="flex items-center justify-center space-x-5">
+					<a class="group" href="https://x.com/fast_near">
+						<svg
+								aria-hidden="true"
+								class="h-5 w-5 fill-jacarta-300 group-hover:fill-accent dark:group-hover:fill-white"
+								data-icon="twitter"
+								data-prefix="fab"
+								focusable="false"
+								role="img"
+								viewBox="0 0 512 512"
+								xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+									d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+							></path>
+						</svg>
+					</a>
+					<a class="group" href="https://github.com/fastnear/">
+						<svg
+								aria-hidden="true"
+								class="h-5 w-5 fill-jacarta-300 group-hover:fill-accent dark:group-hover:fill-white"
+								data-icon="github"
+								data-prefix="fab"
+								focusable="false"
+								role="img"
+								viewBox="0 0 24 24"
+								xmlns="http://www.w3.org/2000/svg"
+						>
+							<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+						</svg>
+					</a>
+				</div>
+			</div>
+
+			<!-- Actions -->
+			<div class="ml-8 hidden lg:flex xl:ml-12">
+				<!-- Dark Mode -->
+				<a
+						class="js-dark-mode-trigger group ml-2 flex h-10 w-10 items-center justify-center rounded-full border border-jacarta-100 bg-white transition-colors hover:border-transparent hover:bg-accent focus:border-transparent focus:bg-accent dark:border-transparent dark:bg-white/[.15] dark:hover:bg-accent"
+						href="#"
+				>
+					<svg
+							class="dark-mode-light h-4 w-4 fill-jacarta-700 transition-colors group-hover:fill-white group-focus:fill-white dark:hidden"
+							height="24"
+							viewBox="0 0 24 24"
+							width="24"
+							xmlns="http://www.w3.org/2000/svg"
+					>
+						<path d="M0 0h24v24H0z" fill="none"/>
+						<path
+								d="M11.38 2.019a7.5 7.5 0 1 0 10.6 10.6C21.662 17.854 17.316 22 12.001 22 6.477 22 2 17.523 2 12c0-5.315 4.146-9.661 9.38-9.981z"
+						/>
+					</svg>
+					<svg
+							class="dark-mode-dark hidden h-4 w-4 fill-jacarta-700 transition-colors group-hover:fill-white group-focus:fill-white dark:block dark:fill-white"
+							height="24"
+							viewBox="0 0 24 24"
+							width="24"
+							xmlns="http://www.w3.org/2000/svg"
+					>
+						<path d="M0 0h24v24H0z" fill="none"/>
+						<path
+								d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"
+						/>
+					</svg>
+				</a>
+			</div>
+		</div>
+
+		<!-- Mobile Menu Actions -->
+		<div class="ml-auto flex lg:hidden">
+			<!-- Dark Mode -->
+			<a
+					class="js-dark-mode-trigger group ml-2 flex h-10 w-10 items-center justify-center rounded-full border border-jacarta-100 bg-white transition-colors hover:border-transparent hover:bg-accent focus:border-transparent focus:bg-accent dark:border-transparent dark:bg-white/[.15] dark:hover:bg-accent"
+					href="#"
+			>
+				<svg
+						class="dark-mode-light h-4 w-4 fill-jacarta-700 transition-colors group-hover:fill-white group-focus:fill-white dark:hidden"
+						height="24"
+						viewBox="0 0 24 24"
+						width="24"
+						xmlns="http://www.w3.org/2000/svg"
+				>
+					<path d="M0 0h24v24H0z" fill="none"/>
+					<path
+							d="M11.38 2.019a7.5 7.5 0 1 0 10.6 10.6C21.662 17.854 17.316 22 12.001 22 6.477 22 2 17.523 2 12c0-5.315 4.146-9.661 9.38-9.981z"
+					/>
+				</svg>
+				<svg
+						class="dark-mode-dark hidden h-4 w-4 fill-jacarta-700 transition-colors group-hover:fill-white group-focus:fill-white dark:block dark:fill-white"
+						height="24"
+						viewBox="0 0 24 24"
+						width="24"
+						xmlns="http://www.w3.org/2000/svg"
+				>
+					<path d="M0 0h24v24H0z" fill="none"/>
+					<path
+							d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"
+					/>
+				</svg>
+			</a>
+
+			<!-- Mobile Menu Toggle -->
+			<button
+					aria-label="open mobile menu"
+					class="js-mobile-toggle group ml-2 flex h-10 w-10 items-center justify-center rounded-full border border-jacarta-100 bg-white transition-colors hover:border-transparent hover:bg-accent focus:border-transparent focus:bg-accent dark:border-transparent dark:bg-white/[.15] dark:hover:bg-accent"
+			>
+				<svg
+						class="h-4 w-4 fill-jacarta-700 transition-colors group-hover:fill-white group-focus:fill-white dark:fill-white"
+						height="24"
+						viewBox="0 0 24 24"
+						width="24"
+						xmlns="http://www.w3.org/2000/svg"
+				>
+					<path d="M0 0h24v24H0z" fill="none"/>
+					<path d="M18 18v2H6v-2h12zm3-7v2H3v-2h18zm-3-7v2H6V4h12z"/>
+				</svg>
+			</button>
+		</div>
+	</div>
+</header>
+
+<main>
+	<!-- Hero -->
+	<section class="relative pb-10 pt-20 md:pt-32 lg:h-[88vh]">
+		<picture class="pointer-events-none absolute inset-x-0 top-0 -z-10 dark:hidden">
+			<img alt="gradient" class="w-full" src="img/gradient.jpg"/>
+		</picture>
+		<picture class="pointer-events-none absolute inset-x-0 top-0 -z-10 hidden dark:block">
+			<img alt="gradient dark" class="w-full" src="img/gradient_dark.jpg"/>
+		</picture>
+
+		<div class="container h-full">
+			<div class="grid h-full items-center gap-4 md:grid-cols-12">
+				<div
+						class="col-span-6 flex h-full flex-col items-center justify-center py-10 md:items-start md:py-20 xl:col-span-4"
+				>
+					<h1
+							class="mb-6 text-center font-display text-5xl text-jacarta-700 dark:text-white md:text-left lg:text-6xl xl:text-7xl"
+					>
+						FASTNEAR
+					</h1>
+					<p class="mb-8 text-center text-lg dark:text-jacarta-200 md:text-left">
+						We provide private dedicated RPC nodes and ultra-fast API endpoints for aggregated account data.
+						We also offer complete historical blockchain data and custom indexer solutions for processing
+						and aggregating blockchain information.
+					</p>
+					<div class="flex space-x-4">
+						<a
+								class="w-36 rounded-full bg-accent py-3 px-8 text-nowrap text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark"
+								href="/services.html"
+						>
+							Learn more
+						</a>
+					</div>
+				</div>
+
+				<!-- Hero image -->
+				<div class="col-span-6 xl:col-span-8">
+					<div class="relative text-center md:pl-8 md:text-right">
+						<svg
+								class="mt-8 inline-block w-72 rotate-[8deg] sm:w-full lg:w-[24rem] xl:w-[35rem]"
+								viewbox="0 0 200 200"
+								xmlns="http://www.w3.org/2000/svg"
+						>
+							<defs>
+								<clipPath clipPathUnits="userSpaceOnUse" id="clipping">
+									<path
+											d="
+                    M 0, 100
+                    C 0, 17.000000000000004 17.000000000000004, 0 100, 0
+                    S 200, 17.000000000000004 200, 100
+                        183, 200 100, 200
+                        0, 183 0, 100
+                "
+											fill="#9446ED"
+									></path>
+								</clipPath>
+							</defs>
+							<g clip-path="url(#clipping)">
+								<!-- Bg image -->
+								<image clip-path="url(#clipping)" height="200" href="img/hero/logo.png" width="200"/>
+							</g>
+						</svg>
+						<img alt="" class="absolute top-0 animate-fly md:-right-[10%]"
+							 src="img/hero/fastnear_ecosystem.png"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- end hero -->
+
+
+
+
+</main>
+
+<!-- Footer -->
+<footer class="page-footer bg-white dark:bg-jacarta-900">
+	<div class="container">
+		<div class="grid grid-cols-6 gap-x-7 gap-y-14 pt-24 pb-12 md:grid-cols-12">
+			<div class="col-span-full sm:col-span-3 md:col-span-4">
+				<!-- Logo -->
+				<a class="mb-6 inline-block" href="index.html">
+					<img alt="FASTNEAR" class="max-h-7 dark:hidden" src="img/logo.png"/>
+					<img alt="FASTNEAR" class="hidden max-h-7 dark:block" src="img/logo_white.png"/>
+				</a>
+				<p class="mb-12 dark:text-jacarta-300">
+                    We're building the fastest infrastructure for NEAR
+				</p>
+				<!-- Socials -->
+				<div class="flex space-x-5">
+					<a class="group" href="https://x.com/fast_near">
+						<svg
+								aria-hidden="true"
+								class="h-5 w-5 fill-jacarta-300 group-hover:fill-accent dark:group-hover:fill-white"
+								data-icon="twitter"
+								data-prefix="fab"
+								focusable="false"
+								role="img"
+								viewBox="0 0 512 512"
+								xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+									d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+							></path>
+						</svg>
+					</a>
+                    <a class="group" href="https://github.com/fastnear/">
+                        <svg
+                                aria-hidden="true"
+                                class="h-5 w-5 fill-jacarta-300 group-hover:fill-accent dark:group-hover:fill-white"
+                                data-icon="github"
+                                data-prefix="fab"
+                                focusable="false"
+                                role="img"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+<script src="./js/app.bundle.js"></script>
+</body>
+</html>
