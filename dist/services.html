@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <title>FastNEAR: Services - We're building the fastest infrastructure for NEAR Protocol</title>
+    <title>FASTNEAR: Services - We're building the fastest infrastructure for NEAR Protocol</title>
 
     <meta charset="utf-8" />
     <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
@@ -25,8 +25,8 @@
       <div class="flex items-center px-6 py-6 xl:px-24">
         <!-- Logo -->
         <a href="index.html" class="shrink-0">
-          <img src="img/logo.png" class="max-h-7 dark:hidden" alt="FastNEAR" />
-          <img src="img/logo_white.png" class="hidden max-h-7 dark:block" alt="FastNEAR" />
+          <img src="img/logo.png" class="max-h-7 dark:hidden" alt="FASTNEAR" />
+          <img src="img/logo_white.png" class="hidden max-h-7 dark:block" alt="FASTNEAR" />
         </a>
 
         <!-- Menu / Actions -->
@@ -39,8 +39,8 @@
           >
             <!-- Mobile Logo -->
             <a href="index.html" class="shrink-0">
-              <img src="img/logo.png" class="max-h-7 dark:hidden" alt="FastNEAR" />
-              <img src="img/logo_white.png" class="hidden max-h-7 dark:block" alt="FastNEAR" />
+              <img src="img/logo.png" class="max-h-7 dark:hidden" alt="FASTNEAR" />
+              <img src="img/logo_white.png" class="hidden max-h-7 dark:block" alt="FASTNEAR" />
             </a>
 
             <!-- Mobile Menu Close -->
@@ -226,7 +226,7 @@
         style="background-image: url('./img/title-container.jpg')"
       >
         <div class="container relative z-10">
-          <h1 class="mb-4 text-center font-display text-4xl font-medium text-white">FastNEAR services</h1>
+          <h1 class="mb-4 text-center font-display text-4xl font-medium text-white">FASTNEAR services</h1>
         </div>
       </section>
 
@@ -237,47 +237,109 @@
         <div class="container">
           <!-- Categories -->
           <div class="mb-16 grid grid-cols-1 gap-7 sm:grid-cols-2 md:grid-cols-2">
-            <a
-              href="#"
+            <div
               class="rounded-2lg border border-jacarta-100 bg-white p-6 text-center transition-shadow hover:shadow-lg dark:border-jacarta-600 dark:bg-jacarta-700"
             >
-              <h3 class="mb-2 font-display text-base font-semibold text-jacarta-700 dark:text-white">
-                Private dedicated RPC nodes
+              <h3 class="text-xl mb-2 font-display text-base font-semibold text-jacarta-700 dark:text-white">
+                Private Dedicated RPC Nodes for NEAR Protocol
               </h3>
-              <p class="dark:text-jacarta-300">
-                Most projects require RPC access for querying data or submitting transaction from the users
+              <p class="dark:text-jacarta-300 text-left">
+                <ul class="dark:text-jacarta-300 text-left list-disc pl-6">
+                  <li><b>Enhanced Performance</b>: Our dedicated RPC nodes are optimized for high performance, ensuring faster query responses and transaction submissions. This is crucial for applications requiring real-time data access and processing.</li>
+
+                  <li><b>Increased Reliability</b>: By providing private RPC nodes, we eliminate the common bottlenecks associated with shared nodes. This means your project will experience fewer downtimes and more consistent performance.</li>
+
+                  <li><b>Scalability</b>: As your project grows, so does the demand for robust and scalable infrastructure. Our dedicated nodes can be scaled seamlessly to meet your increasing needs without compromising on speed or reliability.</li>
+
+                  <li><b>Security</b>: Security is paramount in blockchain operations. Our private RPC nodes offer enhanced security features to protect your data and transactions, ensuring a secure environment for your project.</li>
+
+                  <li><b>Customizability</b>: We offer the flexibility to customize the RPC nodes according to your project’s specific requirements. Whether you need specialized configurations or additional features, we can tailor our service to meet your needs.</li>
+                </ul>
               </p>
-            </a>
-            <a
-              href="#"
+              <p class="dark:text-jacarta-300 text-left mt-3 font-bold">
+                <a href="/contact.html" class="text-accent">Contact us for a dedicated RPC nodes with a custom configuration</a>
+              </p>
+
+            </div>
+            <div
               class="rounded-2lg border border-jacarta-100 bg-white p-6 text-center transition-shadow hover:shadow-lg dark:border-jacarta-600 dark:bg-jacarta-700"
             >
-              <h3 class="mb-2 font-display text-base font-semibold text-jacarta-700 dark:text-white">NEARDATA</h3>
-              <p class="dark:text-jacarta-300">
-                 Complete historical indexed blocks for mainnet and testnet with execution outcomes
+              <h3 class="text-xl mb-2 font-display text-base font-semibold text-jacarta-700 dark:text-white">
+                Indexed data NEARDATA for NEAR Protocol
+              </h3>
+
+              <p class="dark:text-jacarta-300 text-left">
+                It's a simple and free alternative to the publicly available S3-based service <a class="text-accent" href="https://github.com/near/near-lake-framework-rs" target="_blank">NEAR Lake Framework</a>
               </p>
-            </a>
-            <a
-                    href="#"
+              <p class="dark:text-jacarta-300 text-left my-2">
+                FASTNEAR provides servers for both mainnet and testnet:
+              </p>
+              <ul class="dark:text-jacarta-300 text-left list-disc pl-6">
+                <li>Mainnet: <a class="text-accent" href="https://mainnet.neardata.xyz" target="_blank">https://mainnet.neardata.xyz</a></li>
+                <li>Testnet: <a class="text-accent" href="https://testnet.neardata.xyz" target="_blank">https://testnet.neardata.xyz</a></li>
+              </ul>
+              <p class="dark:text-jacarta-300 text-left my-2">
+                The data is free to use and doesn't require any authentication. The bandwidth is limited to 1 Gbps, so you may
+                experience throttling if there are too many parallel requests.
+                We use caching to reduce the load on the server and improve the response time, but it would more likely to be useful for
+                the latest data.
+              </p>
+              <p class="dark:text-jacarta-300 text-left mb-2">
+                To index historical, you may read data in a sequential manner, starting from the block you need or from the genesis
+                block (<code>9820210</code> for mainnet) and moving forward up to the final block.
+              </p>
+              <p class="dark:text-jacarta-300 text-left mb-2">
+                If you want to subscribe to the latest data, start from the latest finalized block and poll the server for the new
+                blocks incrementing the block height by one, making sure you wait for the response.
+              </p>
+
+              <p class="dark:text-jacarta-300 text-left mt-3">
+                <a class="text-accent text-left my-2 font-bold" href="https://github.com/fastnear/neardata-server/">For more information, visit GitHub</a>
+              </p>
+            </div>
+            <div
+
                     class="rounded-2lg border border-jacarta-100 bg-white p-6 text-center transition-shadow hover:shadow-lg dark:border-jacarta-600 dark:bg-jacarta-700"
             >
-              <h3 class="mb-2 font-display text-base font-semibold text-jacarta-700 dark:text-white">FASTNEAR API</h3>
-              <p class="dark:text-jacarta-300">
-                Ultra-fast api endpoint that provides aggregated data about accounts, like fungible tokens with balances, NFTs,
-                delegated staking pools and public key to account ID mappings
+              <h3 class="text-xl mb-2 font-display text-base font-semibold text-jacarta-700 dark:text-white">
+                Ultra-Fast API for NEAR Protocol data
+              </h3>
+              <p class="dark:text-jacarta-300 text-left mb-2">
+                Elevate your blockchain applications with our ultra-fast NEAR Protocol API. Designed for developers and enterprises alike, our API provides comprehensive and aggregated data about NEAR accounts, ensuring you have all the information you need at your fingertips.
               </p>
-            </a>
-            <a
-              href="#"
+              <ul class="dark:text-jacarta-300 text-left list-disc pl-6 mb-2">
+                <li><strong>Public Key to Account ID Mapping</strong>: Instantly map any public key to its corresponding account ID with unparalleled speed and accuracy.</li>
+                <li><strong>Full Access Public Key to Account ID Mapping</strong>: Gain insights into full access public key mappings for enhanced security and control.</li>
+                <li><strong>Delegated Staking Pools</strong>: Discover which staking pools accounts are delegated to, helping you track validator interactions and staking activities.</li>
+                <li><strong>Fungible Token Balances</strong>: Access detailed information about fungible token balances for any account, enabling you to monitor and manage digital assets effectively.</li>
+                <li><strong>Non-Fungible Tokens (NFTs)</strong>: Retrieve data on NFTs associated with any account, empowering you to explore the vibrant world of digital collectibles.</li>
+                <li><strong>Top Token Holders</strong>: Identify the top 100 accounts by balance for any fungible token, providing valuable insights into token distribution and major stakeholders.</li>
+              </ul>
+              <p class="dark:text-jacarta-300 text-left mt-3">
+                <a class="text-accent text-left my-2 font-bold" href="https://github.com/fastnear/fastnear-api-server-rs">For more information, visit GitHub</a>
+              </p>
+            </div>
+            <div
               class="rounded-2lg border border-jacarta-100 bg-white p-6 text-center transition-shadow hover:shadow-lg dark:border-jacarta-600 dark:bg-jacarta-700"
             >
-              <h3 class="mb-2 font-display text-base font-semibold text-jacarta-700 dark:text-white">Custom Indexer solutions</h3>
-              <p class="dark:text-jacarta-300">
-                Alternative to querying the blockchain data through RPC is to build an indexer.
-                It's usually a database that collects, filters, processes and aggregates blockchain information about your project or services.
-                For example, aggregating all logs generated by a fungible token or another smart contract.
+              <h3 class="text-xl mb-2 font-display text-base font-semibold text-jacarta-700 dark:text-white">
+                Custom Indexer Solutions for NEAR Protocol
+              </h3>
+              <p class="dark:text-jacarta-300 text-left">
+                Relying solely on RPC to query blockchain data can be limiting and inefficient. A custom indexer offers a powerful alternative by creating a dedicated database that meticulously collects, filters, processes, and aggregates blockchain information specific to your project or services.
               </p>
-            </a>
+
+              <ul class="dark:text-jacarta-300 text-left list-disc pl-6 my-2">
+                <li><strong>Comprehensive Data Aggregation:</strong> Gather all logs and data generated by your fungible tokens or other smart contracts effortlessly. Our solutions ensure no crucial information slips through the cracks.</li>
+                <li><strong>Enhanced Performance:</strong> Experience faster and more reliable data retrieval compared to traditional RPC queries. Optimize your blockchain interactions and improve the overall efficiency of your operations.</li>
+                <li><strong>Tailored Insights:</strong> Gain access to customized reports and analytics that provide actionable insights into your project's performance. Make data-driven decisions with confidence.</li>
+                <li><strong>Scalability and Flexibility:</strong> Whether you're a startup or a large enterprise, our indexer solutions are designed to scale with your business. Easily adapt to growing data volumes and changing requirements.</li>
+                <li><strong>Expert Support:</strong> Our team of experienced professionals is here to guide you every step of the way. From initial setup to ongoing maintenance, we ensure a smooth and hassle-free experience.</li>
+              </ul>
+              <p class="dark:text-jacarta-300 text-left mt-3 font-bold">
+                <a href="/contact.html" class="text-accent">Contact us to discuss your custom indexer needs</a>
+              </p>
+            </div>
           </div>
           <!-- end categories -->
 
@@ -293,8 +355,8 @@
           <div class="col-span-full sm:col-span-3 md:col-span-4">
             <!-- Logo -->
             <a class="mb-6 inline-block" href="index.html">
-              <img alt="FastNEAR" class="max-h-7 dark:hidden" src="img/logo.png"/>
-              <img alt="FastNEAR" class="hidden max-h-7 dark:block" src="img/logo_white.png"/>
+              <img alt="FASTNEAR" class="max-h-7 dark:hidden" src="img/logo.png"/>
+              <img alt="FASTNEAR" class="hidden max-h-7 dark:block" src="img/logo_white.png"/>
             </a>
             <p class="mb-12 dark:text-jacarta-300">
               We're building the fastest infrastructure for NEAR
