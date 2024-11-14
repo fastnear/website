@@ -1,352 +1,812 @@
-<!DOCTYPE html>
-<html data-scheme="light" dir="ltr" lang="en">
-<head>
-	<title>FASTNEAR - We're building the fastest infrastructure for NEAR Protocol</title>
+<!DOCTYPE html><html><head>
+<meta charset="utf-8">
+<title>FastNEAR - High-Performance NEAR Protocol Infrastructure</title>
+<style>
+:root {
+  --primary: #00E5FF; /* Brighter cyan */
+  --secondary: #0052CC; /* Richer blue */
+  --dark: #0A1F3D; /* Deeper dark blue */
+  --light: #F8FCFF; /* Slightly bluer white */
+  --gradient: linear-gradient(135deg, #00E5FF, #0052CC);
+  --accent: #FF3366; /* New accent color for CTAs */
+}
 
-	<meta charset="utf-8"/>
-	<!--[if IE]>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><![endif]-->
-	<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
-	<meta content="FASTNEAR provides private dedicated RPC nodes and ultra-fast API endpoints for aggregated account data. FASTNEAR also offers complete historical blockchain data and custom indexer solutions for processing and aggregating blockchain information." name="description"/>
-	<link rel="icon" type="image/png" href="/favicon.png" />
-	<link rel="apple-touch-icon" href="/app.png" />
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-	<!-- Css -->
-	<link href="./css/style.css" rel="stylesheet"/>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color: var(--dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
-	<!-- Dark Mode JS -->
-	<script src="./js/darkMode.bundle.js"></script>
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #00E5FF, #0052CC, #003399, #001F66);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: white;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='rgba(255,255,255,0.1)' d='M44.7,-76.4C58.8,-69.2,71.8,-59.1,79.6,-45.8C87.4,-32.5,90,-16.3,87.6,-1.4C85.2,13.5,77.8,27,68.4,38.4C59,49.8,47.6,59.1,34.7,64.5C21.8,69.9,7.3,71.4,-7.2,70.5C-21.7,69.6,-36.2,66.3,-47.6,58.7C-59,51.1,-67.3,39.2,-74.3,25.7C-81.3,12.2,-87,-2.8,-84.5,-16.3C-82,-29.8,-71.3,-41.8,-58.7,-49C-46.1,-56.2,-31.6,-58.7,-18.9,-67.5C-6.1,-76.3,4.8,-91.4,18.4,-92.6C32,-93.8,48.3,-81.1,44.7,-76.4Z' transform='translate(100 100)' /%3E%3C/svg%3E") no-repeat center center;
+  z-index: 0;
+  opacity: 0.1;
+  animation: float 20s ease-in-out infinite;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='rgba(255,255,255,0.05)' d='M54.2,-75.7C71.4,-68.1,87.1,-55.4,94.3,-39.1C101.4,-22.8,99.9,-2.9,94.1,14.9C88.3,32.6,78.1,48.2,64.7,59.2C51.3,70.2,34.7,76.6,17.4,79.6C0.1,82.6,-17.9,82.2,-33.6,75.9C-49.3,69.6,-62.7,57.4,-73.6,42.4C-84.5,27.4,-92.9,9.6,-91.8,-8C-90.6,-25.6,-79.9,-43,-66.1,-55.9C-52.3,-68.8,-35.4,-77.2,-17.9,-79.7C-0.4,-82.2,17.7,-78.8,34.7,-75.5C51.7,-72.1,67.6,-68.8,54.2,-75.7Z' transform='translate(100 100)' /%3E%3C/svg%3E") no-repeat center center;
+  z-index: 0;
+  opacity: 0.05;
+  animation: float-reverse 25s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes float-reverse {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(20px) rotate(-5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(10, 37, 64, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo svg {
+  width: 30px;
+  height: 30px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 6rem 0;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  font-size: 4rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #fff, #e6e6e6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1.2rem 3rem; /* Larger padding */
+  background: var(--accent);
+  color: white; /* White text instead of primary */
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.1rem; /* Slightly larger text */
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(255, 51, 102, 0.3); /* Initial glow */
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 51, 102, 0.5); /* Stronger glow on hover */
+  background: #FF4D7F; /* Slightly lighter on hover */
+}
+
+.services {
+  padding: 8rem 0;
+  background: var(--light);
+  position: relative;
+}
+
+.services::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: var(--light);
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  font-size: 1.2rem;
+  color: var(--secondary);
+  opacity: 0.8;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.service-card {
+  border-top: 5px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              var(--gradient) border-box;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 300px;
+}
+
+.service-features {
+  margin-top: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.service-features li {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  font-size: 0.9rem;
+  color: var(--secondary);
+}
+
+.service-features li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
+
+.read-more {
+  margin-top: auto;
+  color: var(--secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.read-more:hover {
+  color: var(--primary);
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-icon {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+
+.service-card p {
+  color: var(--secondary);
+  opacity: 0.8;
+}
+
+.testimonials {
+  padding: 8rem 0;
+  background: linear-gradient(135deg, #003399, #0052CC);
+  color: white;
+  position: relative;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.testimonial-card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 15px;
+  transition: all 0.3s;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.pricing {
+  padding: 8rem 0;
+  background: white;
+}
+
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.price-card {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: all 0.3s;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.price-card.featured {
+  background: linear-gradient(135deg, #0052CC, #00E5FF);
+  box-shadow: 0 15px 35px rgba(0, 82, 204, 0.2);
+}
+
+.price-card.featured .price,
+.price-card.featured h3,
+.price-card.featured li {
+  color: white;
+}
+
+.price-card.featured .cta-button {
+  background: white;
+  color: var(--secondary);
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  color: var(--dark);
+}
+
+.price-card ul {
+  list-style: none;
+  margin: 2rem 0;
+  padding: 0;
+}
+
+.price-card li {
+  margin: 1rem 0;
+  color: var(--secondary);
+}
+
+.team {
+  padding: 8rem 0;
+  background: var(--light);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  background: var(--gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.team-member h3 {
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+}
+
+.team-member p {
+  color: var(--secondary);
+  opacity: 0.8;
+}
+
+footer {
+  background: linear-gradient(to bottom, var(--dark), #051529);
+  color: white;
+  padding: 5rem 0 3rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-grid h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-grid a {
+  color: white;
+  opacity: 0.8;
+  text-decoration: none;
+  display: block;
+  margin: 0.5rem 0;
+  transition: opacity 0.3s;
+}
+
+.footer-grid a:hover {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .hero {
+    text-align: center;
+  }
+  
+  .service-grid,
+  .price-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .price-card.featured {
+    transform: none;
+  }
+}
+</style>
+
+<script>
+window.addEventListener('scroll', () => {
+  const navbar = document.querySelector('.navbar');
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+
+// Animate elements on scroll
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.service-card, .price-card, .testimonial-card, .team-member').forEach((el) => observer.observe(el));
+</script>
 </head>
+<body>
 
-<body
-    class="overflow-x-hidden font-body text-jacarta-500 dark:bg-jacarta-900"
-    itemscope
-	itemtype="http://schema.org/WebPage"
->
-<!-- Header -->
-<header class="js-page-header fixed top-0 z-20 w-full backdrop-blur transition-colors">
-	<div class="flex items-center px-6 py-6 xl:px-24">
-		<!-- Logo -->
-		<a class="shrink-0" href="index.html">
-			<img alt="FASTNEAR" class="max-h-7 dark:hidden" src="img/logo.png"/>
-			<img alt="FASTNEAR" class="hidden max-h-7 dark:block" src="img/logo_white.png"/>
-		</a>
+<nav class="navbar">
+  <div class="container">
+  <a href="/" class="logo">
+    <img src="/img/logo_white.png" alt="FastNEAR logo in white" width="120" height="30" style="object-fit: contain;">
+  </a>
+  <div class="nav-links">
+    <a href="https://fastnear.redocly.app/">Documentation</a>
+    <a href="#pricing">Pricing</a>
+    <a href="https://t.me/fast_near">Contact</a>
+  </div>
+</div>
+</nav>
 
-		<!-- Menu / Actions -->
-		<div
-				class="js-mobile-menu invisible lg:visible fixed inset-0 z-10 ml-auto items-center bg-white opacity-0 dark:bg-jacarta-800 lg:relative lg:inset-auto lg:flex lg:bg-transparent lg:opacity-100 dark:lg:bg-transparent"
-		>
-			<!-- Mobile Logo / Menu Close -->
-			<div
-					class="t-0 fixed left-0 z-10 flex w-full items-center justify-between bg-white p-6 dark:bg-jacarta-800 lg:hidden"
-			>
-				<!-- Mobile Logo -->
-				<a class="shrink-0" href="index.html">
-					<img alt="FASTNEAR" class="max-h-7 dark:hidden" src="img/logo.png"/>
-					<img alt="FASTNEAR" class="hidden max-h-7 dark:block" src="img/logo_white.png"/>
-				</a>
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>The Fastest Gateway to NEAR Protocol</h1>
+      <p>High-performance infrastructure enabling seamless blockchain interactions. Build faster, scale further, and innovate with confidence.</p>
+      <a href="https://forms.gle/YGKxB6DY8MJNP17a8" class="cta-button">Start Building Today</a>
+    </div>
+  </div>
+</section>
 
-				<!-- Mobile Menu Close -->
-				<button
-						aria-label="close mobile menu"
-						class="js-mobile-close group ml-2 flex h-10 w-10 items-center justify-center rounded-full border border-jacarta-100 bg-white transition-colors hover:border-transparent hover:bg-accent focus:border-transparent focus:bg-accent dark:border-transparent dark:bg-white/[.15] dark:hover:bg-accent"
-				>
-					<svg
-							class="h-4 w-4 fill-jacarta-700 transition-colors group-hover:fill-white group-focus:fill-white dark:fill-white"
-							height="24"
-							viewBox="0 0 24 24"
-							width="24"
-							xmlns="http://www.w3.org/2000/svg"
-					>
-						<path d="M0 0h24v24H0z" fill="none"/>
-						<path
-								d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"
-						/>
-					</svg>
-				</button>
-			</div>
+<section class="services">
+  <div class="container">
+    <div class="section-header">
+      <h2>Our Services</h2>
+      <p>Explore our range of offerings designed to accelerate your development.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"></path>
+        </svg>
+        <h3>Private Dedicated RPC Nodes</h3>
+        <p>Enterprise-grade infrastructure with superior performance and reliability.</p>
+        <ul class="service-features">
+          <li>Faster query responses and transaction submissions</li>
+          <li>Increased reliability and fewer downtimes</li>
+          <li>Enhanced security features</li>
+          <li>Customizable configurations</li>
+        </ul>
+        <a href="https://t.me/fast_near" class="read-more">Contact us →</a>
+      </div>
+      
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12,3C7.58,3 4,4.79 4,7C4,9.21 7.58,11 12,11C16.42,11 20,9.21 20,7C20,4.79 16.42,3 12,3M4,9V12C4,14.21 7.58,16 12,16C16.42,16 20,14.21 20,12V9C20,11.21 16.42,13 12,13C7.58,13 4,11.21 4,9M4,14V17C4,19.21 7.58,21 12,21C16.42,21 20,19.21 20,17V14C20,16.21 16.42,18 12,18C7.58,18 4,16.21 4,14Z"></path>
+        </svg>
+        <h3>NEARDATA</h3>
+        <p>Free indexed blockchain data access for seamless development.</p>
+        <ul class="service-features">
+          <li>Free access to mainnet and testnet data</li>
+          <li>No authentication required</li>
+          <li>1 Gbps bandwidth limit</li>
+          <li>Efficient caching system</li>
+        </ul>
+        <a href="https://github.com/fastnear/neardata-server/" class="read-more">Learn more →</a>
+      </div>
+      
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M7,7H5A2,2 0 0,0 3,9V17H5V13H7V17H9V9A2,2 0 0,0 7,7M7,11H5V9H7M14,7H10V17H12V13H14A2,2 0 0,0 16,11V9A2,2 0 0,0 14,7M14,11H12V9H14M20,9V15H21V17H17V15H18V9H17V7H21V9"></path>
+        </svg>
+        <h3>Ultra-Fast API</h3>
+        <p>Low-latency API optimized for wallets and explorers.</p>
+        <ul class="service-features">
+          <li>Account ID mapping</li>
+          <li>Delegated staking pool information</li>
+          <li>Token data retrieval</li>
+          <li>Top holder analytics</li>
+        </ul>
+        <a href="https://github.com/fastnear/fastnear-api-server-rs" class="read-more">Learn more →</a>
+      </div>
+      
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H16L12,22L8,18H4A2,2 0 0,1 2,16V4A2,2 0 0,1 4,2M4,4V16H8.83L12,19.17L15.17,16H20V4H4M6,7H18V9H6V7M6,11H16V13H6V11Z"></path>
+        </svg>
+        <h3>Custom Indexer Solutions</h3>
+        <p>Tailored database solutions for specific project needs.</p>
+        <ul class="service-features">
+          <li>Dedicated data collection</li>
+          <li>Customized reports and analytics</li>
+          <li>Expert support team</li>
+          <li>Scalable architecture</li>
+        </ul>
+        <a href="https://t.me/fast_near" class="read-more">Contact us →</a>
+      </div>
+      
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9M12,4.5C17,4.5 21.27,7.61 23,12C21.27,16.39 17,19.5 12,19.5C7,19.5 2.73,16.39 1,12C2.73,7.61 7,4.5 12,4.5M3.18,12C4.83,15.36 8.24,17.5 12,17.5C15.76,17.5 19.17,15.36 20.82,12C19.17,8.64 15.76,6.5 12,6.5C8.24,6.5 4.83,8.64 3.18,12Z"></path>
+        </svg>
+        <h3>Explorer API</h3>
+        <p>Comprehensive blockchain explorer infrastructure.</p>
+        <ul class="service-features">
+          <li>Transaction details</li>
+          <li>Account information</li>
+          <li>Block data access</li>
+          <li>Receipt tracking</li>
+        </ul>
+        <a href="https://github.com/fastnear/explorer-api" class="read-more">Learn more →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-			<!-- Primary Nav -->
-			<div class="relative mt-24 mb-8 w-full lg:hidden"></div>
+<section class="testimonials">
+  <div class="container">
+  <div class="section-header">
+    <h2 style="color: white;">What Our Customers Say</h2>
+    <p style="color: rgba(255, 255, 255, 0.9);">Join hundreds of satisfied developers building on NEAR</p>
+  </div>
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <div class="testimonial-header">
+        <div class="testimonial-avatar">
+          <img src="https://file.garden/ZyQmGjtO7TTyC-hd/IMAGE%202024-11-01%2013%3A40%3A35.jpg" alt="Profile photo of Edward Chew" width="60" height="60" style="border-radius: 50%; object-fit: cover;">
+        </div>
+        <div>
+          <h3>Edward Chew</h3>
+          <p>Founder, Meteor Wallet</p>
+        </div>
+      </div>
+      <p>"FastNEAR offers stable and reliable RPC services, even during peak times and network congestion."</p>
+    </div>
+    
+    <div class="testimonial-card">
+      <div class="testimonial-header">
+        <div class="testimonial-avatar">
+          <img src="https://file.garden/ZyQmGjtO7TTyC-hd/1684813204556.jpeg" alt="Peter Volnov profile photo" width="60" height="60" style="border-radius: 50%; object-fit: cover;">
+        </div>
+        <div>
+          <h3>Peter Volnov</h3>
+          <p>Founder, HERE Wallet</p>
+        </div>
+      </div>
+      <p>"We were able to scale HOT Wallet to over 8 million weekly users with FastNEAR having our back covered and all NEAR data on-app side. We use FastNEAR RPC to cover 95% users's requests and FastNEAR api to index token balances."</p>
+    </div>
+  </div>
+</div>
+</section>
 
-			<nav class="navbar w-full">
-				<ul class="flex flex-col lg:flex-row">
-					<li class="group">
-						<a class="flex items-center justify-between py-3.5 font-display text-base text-jacarta-700 hover:text-accent focus:text-accent dark:text-white dark:hover:text-accent dark:focus:text-accent lg:px-5"
-						   href="/index.html"
-						>Home</a
-						>
-					</li>
-					<li class="group">
-						<a class="flex items-center justify-between py-3.5 font-display text-base text-jacarta-700 hover:text-accent focus:text-accent dark:text-white dark:hover:text-accent dark:focus:text-accent lg:px-5"
-						   href="/services.html"
-						>Services</a
-						>
-					</li>
-					<li class="group">
-						<a class="flex items-center justify-between py-3.5 font-display text-base text-jacarta-700 hover:text-accent focus:text-accent dark:text-white dark:hover:text-accent dark:focus:text-accent lg:px-5"
-						   href="/contact.html"
-						>Contact Us</a
-						>
-					</li>
-				</ul>
-			</nav>
+<section class="pricing" id="pricing">
+  <div class="container">
+  <h2>Simple, Transparent Pricing</h2>
+  <div class="price-grid">
+    <div class="price-card">
+      <h3>Dev Plan</h3>
+      <p class="price">$69/month</p>
+      <ul>
+        <li>10M API requests/month</li>
+        <li>Shared RPC access</li>
+        <li>Basic support</li>
+      </ul>
+      <a href="https://buy.stripe.com/6oEdR0cfCe8L4GQdQQ" class="cta-button">Get Started</a>
+    </div>
+    
+    <div class="price-card featured">
+      <h3>Business Plan</h3>
+      <p class="price">$499/month</p>
+      <ul>
+        <li>100M API requests/month</li>
+        <li>Dedicated RPC node</li>
+        <li>Priority support</li>
+      </ul>
+      <a href="https://buy.stripe.com/3cs9AK4Na8Ora1a8wx" class="cta-button">Get Started</a>
+    </div>
+    
+    <div class="price-card">
+      <h3>Enterprise</h3>
+      <p class="price">Custom</p>
+      <ul>
+        <li>Unlimited API requests</li>
+        <li>Multiple dedicated nodes</li>
+        <li>24/7 support</li>
+      </ul>
+      <a href="https://t.me/fast_near" class="cta-button">Contact Sales</a>
+    </div>
+  </div>
+</div>
+</section>
 
-			<!-- Mobile Connect Wallet / Socials -->
-			<div class="mt-10 w-full lg:hidden">
-				<hr class="my-5 h-px border-0 bg-jacarta-100 dark:bg-jacarta-600"/>
+<section class="team">
+  <div class="container">
+  <div class="section-header">
+    <h2>Meet Our Team</h2>
+    <p>Industry veterans building the future of blockchain infrastructure</p>
+  </div>
+  <div class="team-grid">
+    <div class="team-member">
+  <img src="https://file.garden/ZyQmGjtO7TTyC-hd/photo_2024-10-31%2017.49.54.jpeg" alt="Headshot of Evgeny Kuzyakov, smiling, wearing a dark shirt" width="200" height="200" style="border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem;">
+  <h3>Evgeny Kuzyakov</h3>
+  <p>Co-founder &amp; CTO</p>
+  <p>Co-founder of FastNEAR and founder of NEAR.social. Previously worked at Proximity, NEAR Protocol, Google, and Facebook. Extensive experience in blockchain architecture and developer tooling.</p>
+</div>
 
-				<!-- Socials -->
-				<div class="flex items-center justify-center space-x-5">
-					<a class="group" href="https://x.com/fast_near">
-						<svg
-								aria-hidden="true"
-								class="h-5 w-5 fill-jacarta-300 group-hover:fill-accent dark:group-hover:fill-white"
-								data-icon="twitter"
-								data-prefix="fab"
-								focusable="false"
-								role="img"
-								viewBox="0 0 512 512"
-								xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-									d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
-							></path>
-						</svg>
-					</a>
-					<a class="group" href="https://github.com/fastnear/">
-						<svg
-								aria-hidden="true"
-								class="h-5 w-5 fill-jacarta-300 group-hover:fill-accent dark:group-hover:fill-white"
-								data-icon="github"
-								data-prefix="fab"
-								focusable="false"
-								role="img"
-								viewBox="0 0 24 24"
-								xmlns="http://www.w3.org/2000/svg"
-						>
-							<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-						</svg>
-					</a>
-				</div>
-			</div>
+    <div class="team-member">
+  <img src="https://file.garden/ZyQmGjtO7TTyC-hd/jvhLKl-Y_400x400.jpg" alt="Headshot of Mike Purvis, professional photo" width="200" height="200" style="border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem;">
+  <h3>Mike Purvis</h3>
+  <p>Head of Infrastructure</p>
+  <p>Early NEAR ecosystem contributor with extensive blockchain infrastructure experience. Former web3 startup founder with VC backing. Expert in server management and validator operations, specializing in high-stakes migrations and security implementations.</p>
+</div>
 
-			<!-- Actions -->
-			<div class="ml-8 hidden lg:flex xl:ml-12">
-				<!-- Dark Mode -->
-				<a
-						class="js-dark-mode-trigger group ml-2 flex h-10 w-10 items-center justify-center rounded-full border border-jacarta-100 bg-white transition-colors hover:border-transparent hover:bg-accent focus:border-transparent focus:bg-accent dark:border-transparent dark:bg-white/[.15] dark:hover:bg-accent"
-						href="#"
-				>
-					<svg
-							class="dark-mode-light h-4 w-4 fill-jacarta-700 transition-colors group-hover:fill-white group-focus:fill-white dark:hidden"
-							height="24"
-							viewBox="0 0 24 24"
-							width="24"
-							xmlns="http://www.w3.org/2000/svg"
-					>
-						<path d="M0 0h24v24H0z" fill="none"/>
-						<path
-								d="M11.38 2.019a7.5 7.5 0 1 0 10.6 10.6C21.662 17.854 17.316 22 12.001 22 6.477 22 2 17.523 2 12c0-5.315 4.146-9.661 9.38-9.981z"
-						/>
-					</svg>
-					<svg
-							class="dark-mode-dark hidden h-4 w-4 fill-jacarta-700 transition-colors group-hover:fill-white group-focus:fill-white dark:block dark:fill-white"
-							height="24"
-							viewBox="0 0 24 24"
-							width="24"
-							xmlns="http://www.w3.org/2000/svg"
-					>
-						<path d="M0 0h24v24H0z" fill="none"/>
-						<path
-								d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"
-						/>
-					</svg>
-				</a>
-			</div>
-		</div>
+    <div class="team-member">
+  <img src="https://file.garden/ZyQmGjtO7TTyC-hd/photo_2024-11-01%2000.09.35.jpeg" alt="Headshot of Vlad Grichina, wearing glasses and a casual shirt" width="200" height="200" style="border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem;">
+  <h3>Vlad Grichina</h3>
+  <p>Chief Duct Tape Officer</p>
+  <p>Pioneer in NEAR ecosystem development tools and wallet infrastructure. Built early NEAR dev tools and contributed to core infrastructure. Previously at Human Guild, NEAR, and Google. Driving force behind Web4 and unstoppable websites.</p>
+</div>
+  </div>
+</div>
+</section>
 
-		<!-- Mobile Menu Actions -->
-		<div class="ml-auto flex lg:hidden">
-			<!-- Dark Mode -->
-			<a
-					class="js-dark-mode-trigger group ml-2 flex h-10 w-10 items-center justify-center rounded-full border border-jacarta-100 bg-white transition-colors hover:border-transparent hover:bg-accent focus:border-transparent focus:bg-accent dark:border-transparent dark:bg-white/[.15] dark:hover:bg-accent"
-					href="#"
-			>
-				<svg
-						class="dark-mode-light h-4 w-4 fill-jacarta-700 transition-colors group-hover:fill-white group-focus:fill-white dark:hidden"
-						height="24"
-						viewBox="0 0 24 24"
-						width="24"
-						xmlns="http://www.w3.org/2000/svg"
-				>
-					<path d="M0 0h24v24H0z" fill="none"/>
-					<path
-							d="M11.38 2.019a7.5 7.5 0 1 0 10.6 10.6C21.662 17.854 17.316 22 12.001 22 6.477 22 2 17.523 2 12c0-5.315 4.146-9.661 9.38-9.981z"
-					/>
-				</svg>
-				<svg
-						class="dark-mode-dark hidden h-4 w-4 fill-jacarta-700 transition-colors group-hover:fill-white group-focus:fill-white dark:block dark:fill-white"
-						height="24"
-						viewBox="0 0 24 24"
-						width="24"
-						xmlns="http://www.w3.org/2000/svg"
-				>
-					<path d="M0 0h24v24H0z" fill="none"/>
-					<path
-							d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"
-					/>
-				</svg>
-			</a>
-
-			<!-- Mobile Menu Toggle -->
-			<button
-					aria-label="open mobile menu"
-					class="js-mobile-toggle group ml-2 flex h-10 w-10 items-center justify-center rounded-full border border-jacarta-100 bg-white transition-colors hover:border-transparent hover:bg-accent focus:border-transparent focus:bg-accent dark:border-transparent dark:bg-white/[.15] dark:hover:bg-accent"
-			>
-				<svg
-						class="h-4 w-4 fill-jacarta-700 transition-colors group-hover:fill-white group-focus:fill-white dark:fill-white"
-						height="24"
-						viewBox="0 0 24 24"
-						width="24"
-						xmlns="http://www.w3.org/2000/svg"
-				>
-					<path d="M0 0h24v24H0z" fill="none"/>
-					<path d="M18 18v2H6v-2h12zm3-7v2H3v-2h18zm-3-7v2H6V4h12z"/>
-				</svg>
-			</button>
-		</div>
-	</div>
-</header>
-
-<main>
-	<!-- Hero -->
-	<section class="relative pb-10 pt-20 md:pt-32 lg:h-[88vh]">
-		<picture class="pointer-events-none absolute inset-x-0 top-0 -z-10 dark:hidden">
-			<img alt="gradient" class="w-full" src="img/gradient.jpg"/>
-		</picture>
-		<picture class="pointer-events-none absolute inset-x-0 top-0 -z-10 hidden dark:block">
-			<img alt="gradient dark" class="w-full" src="img/gradient_dark.jpg"/>
-		</picture>
-
-		<div class="container h-full">
-			<div class="grid h-full items-center gap-4 md:grid-cols-12">
-				<div
-						class="col-span-6 flex h-full flex-col items-center justify-center py-10 md:items-start md:py-20 xl:col-span-4"
-				>
-					<h1
-							class="mb-6 text-center font-display text-5xl text-jacarta-700 dark:text-white md:text-left lg:text-6xl xl:text-7xl"
-					>
-						FASTNEAR
-					</h1>
-					<p class="mb-8 text-center text-lg dark:text-jacarta-200 md:text-left">
-						We provide private dedicated RPC nodes and ultra-fast API endpoints for aggregated account data.
-						We also offer complete historical blockchain data and custom indexer solutions for processing
-						and aggregating blockchain information.
-					</p>
-					<div class="flex space-x-4">
-						<a
-								class="w-36 rounded-full bg-accent py-3 px-8 text-nowrap text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark"
-								href="/services.html"
-						>
-							Learn more
-						</a>
-					</div>
-				</div>
-
-				<!-- Hero image -->
-				<div class="col-span-6 xl:col-span-8">
-					<div class="relative text-center md:pl-8 md:text-right">
-						<svg
-								class="mt-8 inline-block w-72 rotate-[8deg] sm:w-full lg:w-[24rem] xl:w-[35rem]"
-								viewbox="0 0 200 200"
-								xmlns="http://www.w3.org/2000/svg"
-						>
-							<defs>
-								<clipPath clipPathUnits="userSpaceOnUse" id="clipping">
-									<path
-											d="
-                    M 0, 100
-                    C 0, 17.000000000000004 17.000000000000004, 0 100, 0
-                    S 200, 17.000000000000004 200, 100
-                        183, 200 100, 200
-                        0, 183 0, 100
-                "
-											fill="#9446ED"
-									></path>
-								</clipPath>
-							</defs>
-							<g clip-path="url(#clipping)">
-								<!-- Bg image -->
-								<image clip-path="url(#clipping)" height="200" href="img/hero/logo.png" width="200"/>
-							</g>
-						</svg>
-						<img alt="" class="absolute top-0 animate-fly md:-right-[10%]"
-							 src="img/hero/fastnear_ecosystem.png"/>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- end hero -->
-
-
-
-
-</main>
-
-<!-- Footer -->
-<footer class="page-footer bg-white dark:bg-jacarta-900">
-	<div class="container">
-		<div class="grid grid-cols-6 gap-x-7 gap-y-14 pt-24 pb-12 md:grid-cols-12">
-			<div class="col-span-full sm:col-span-3 md:col-span-4">
-				<!-- Logo -->
-				<a class="mb-6 inline-block" href="index.html">
-					<img alt="FASTNEAR" class="max-h-7 dark:hidden" src="img/logo.png"/>
-					<img alt="FASTNEAR" class="hidden max-h-7 dark:block" src="img/logo_white.png"/>
-				</a>
-				<p class="mb-12 dark:text-jacarta-300">
-                    We're building the fastest infrastructure for NEAR
-				</p>
-				<!-- Socials -->
-				<div class="flex space-x-5">
-					<a class="group" href="https://x.com/fast_near">
-						<svg
-								aria-hidden="true"
-								class="h-5 w-5 fill-jacarta-300 group-hover:fill-accent dark:group-hover:fill-white"
-								data-icon="twitter"
-								data-prefix="fab"
-								focusable="false"
-								role="img"
-								viewBox="0 0 512 512"
-								xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-									d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
-							></path>
-						</svg>
-					</a>
-                    <a class="group" href="https://github.com/fastnear/">
-                        <svg
-                                aria-hidden="true"
-                                class="h-5 w-5 fill-jacarta-300 group-hover:fill-accent dark:group-hover:fill-white"
-                                data-icon="github"
-                                data-prefix="fab"
-                                focusable="false"
-                                role="img"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                    </a>
-				</div>
-			</div>
-
-		</div>
-	</div>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>FastNEAR</h4>
+        <p>Building the future of NEAR Protocol infrastructure.</p>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <!-- <a href="https://fastnear.com/terms">Terms of Service</a> -->
+        <a href="https://www.termsfeed.com/live/182a6b0c-cd50-4d75-b37f-8478c0bcd3bb">Privacy Policy</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="https://github.com/fastnear">GitHub</a>
+        <a href="https://x.com/fast_near">Twitter</a>
+        <a href="https://t.me/fast_near">Telegram</a>
+      </div>
+    </div>
+    <p>© 2024 FastNEAR. All rights reserved.</p>
+  </div>
 </footer>
 
-<script src="./js/app.bundle.js"></script>
-</body>
-</html>
+</body></html>
