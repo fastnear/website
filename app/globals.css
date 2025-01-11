@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --primary: 191 100% 50%; /* #00E5FF - Brighter cyan */
+    --primary-foreground: 222 47% 11%;
+    
+    --secondary: 217 100% 40%; /* #0052CC - Richer blue */
+    --secondary-foreground: 210 40% 98%;
+    
+    --background: 210 40% 98%;
+    --foreground: 217 33% 17%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 217 33% 17%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 217 33% 17%;
+    
+    --muted: 217 33% 97%;
+    --muted-foreground: 217 33% 45%;
+    
+    --accent: 348 100% 60%; /* #FF3366 - Accent color */
+    --accent-foreground: 210 40% 98%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 93%;
+    --input: 217 33% 93%;
+    --ring: 217 33% 17%;
+    
+    --radius: 0.75rem;
+  }
+ 
+  .dark {
+    --background: 217 33% 17%;
+    --foreground: 210 40% 98%;
+ 
+    --card: 217 33% 17%;
+    --card-foreground: 210 40% 98%;
+ 
+    --popover: 217 33% 17%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --primary: 191 100% 50%;
+    --primary-foreground: 222 47% 11%;
+ 
+    --secondary: 217 100% 40%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --muted: 217 33% 27%;
+    --muted-foreground: 217 33% 65%;
+ 
+    --accent: 348 100% 60%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --border: 217 33% 27%;
+    --input: 217 33% 27%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes float-reverse {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(20px) rotate(-5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-gradient {
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+.animate-float {
+  animation: float 20s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 25s ease-in-out infinite;
+}
+
