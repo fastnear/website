@@ -20,7 +20,7 @@ export function Navbar(props: { alwaysScrolled?: boolean }) {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || props?.alwaysScrolled
+        isScrolled || props.alwaysScrolled
           ? "bg-[rgba(10,37,64,0.95)] shadow-lg"
           : "bg-transparent"
       }`}
