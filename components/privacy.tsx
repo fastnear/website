@@ -52,18 +52,19 @@ export function Privacy() {
                   Affiliate
                 </strong>{" "}
                 means an entity that controls, is controlled by or is under
-                common control with a party, where "control" means ownership of
-                50% or more of the shares, equity interest or other securities
-                entitled to vote for election of directors or other managing
-                authority.
+                common control with a party, where &#34;control&#34; means
+                ownership of 50% or more of the shares, equity interest or other
+                securities entitled to vote for election of directors or other
+                managing authority.
               </p>
             </li>
             <li>
               <p className="text-gray-700 leading-relaxed mb-4">
                 <strong className="font-semibold text-gray-900">Company</strong>{" "}
-                (referred to as either "the Company", "We", "Us" or "Our" in
-                this Agreement) refers to Fastnear Inc., 1111B S Governors Ave
-                STE 7354 Dover, DE, 19904 US.
+                (referred to as either &#34;the Company&#34;, &#34;We&#34;,
+                &#34;Us&#34; or &#34;Our&#34; in this Agreement) refers to
+                Fastnear Inc., 1111B S Governors Ave STE 7354 Dover, DE, 19904
+                US.
               </p>
             </li>
             <li>
@@ -201,11 +202,11 @@ export function Privacy() {
             Usage Data is collected automatically when using the Service.
           </p>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Usage Data may include information such as Your Device's Internet
-            Protocol address (e.g. IP address), browser type, browser version,
-            the pages of our Service that You visit, the time and date of Your
-            visit, the time spent on those pages, unique device identifiers and
-            other diagnostic data.
+            Usage Data may include information such as Your Device&#39;s
+            Internet Protocol address (e.g. IP address), browser type, browser
+            version, the pages of our Service that You visit, the time and date
+            of Your visit, the time spent on those pages, unique device
+            identifiers and other diagnostic data.
           </p>
           <p className="text-gray-700 leading-relaxed mb-4">
             When You access the Service by or through a mobile device, We may
@@ -237,17 +238,17 @@ export function Privacy() {
           <p className="text-gray-700 leading-relaxed mb-4">
             If You decide to register through or otherwise grant us access to a
             Third-Party Social Media Service, We may collect Personal data that
-            is already associated with Your Third-Party Social Media Service's
-            account, such as Your name, Your email address, Your activities or
-            Your contact list associated with that account.
+            is already associated with Your Third-Party Social Media
+            Service&#39;s account, such as Your name, Your email address, Your
+            activities or Your contact list associated with that account.
           </p>
           <p className="text-gray-700 leading-relaxed mb-4">
             You may also have the option of sharing additional information with
-            the Company through Your Third-Party Social Media Service's account.
-            If You choose to provide such information and Personal Data, during
-            registration or otherwise, You are giving the Company permission to
-            use, share, and store it in a manner consistent with this Privacy
-            Policy.
+            the Company through Your Third-Party Social Media Service&#39;s
+            account. If You choose to provide such information and Personal
+            Data, during registration or otherwise, You are giving the Company
+            permission to use, share, and store it in a manner consistent with
+            this Privacy Policy.
           </p>
           <h4 className="text-lg font-semibold text-gray-800 mt-6 mb-3">
             Tracking Technologies and Cookies
@@ -285,10 +286,10 @@ export function Privacy() {
             </li>
           </ul>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Cookies can be "Persistent" or "Session" Cookies. Persistent Cookies
-            remain on Your personal computer or mobile device when You go
-            offline, while Session Cookies are deleted as soon as You close Your
-            web browser. You can learn more about cookies on{" "}
+            Cookies can be &#34;Persistent&#34; or &#34;Session&#34; Cookies.
+            Persistent Cookies remain on Your personal computer or mobile device
+            when You go offline, while Session Cookies are deleted as soon as
+            You close Your web browser. You can learn more about cookies on{" "}
             <a
               href="https://www.termsfeed.com/blog/cookies/#What_Are_Cookies"
               target="_blank"
@@ -410,7 +411,7 @@ export function Privacy() {
                 </strong>{" "}
                 To contact You by email, telephone calls, SMS, or other
                 equivalent forms of electronic communication, such as a mobile
-                application's push notifications regarding updates or
+                application&#39;s push notifications regarding updates or
                 informative communications related to the functionalities,
                 products or contracted services, including the security updates,
                 when necessary or reasonable for their implementation.
@@ -542,7 +543,7 @@ export function Privacy() {
           </h3>
           <p className="text-gray-700 leading-relaxed mb-4">
             Your information, including Personal Data, is processed at the
-            Company's operating offices and in any other places where the
+            Company&#39;s operating offices and in any other places where the
             parties involved in the processing are located. It means that this
             information may be transferred to — and maintained on — computers
             located outside of Your state, province, country or other
@@ -634,7 +635,7 @@ export function Privacy() {
             cannot guarantee its absolute security.
           </p>
           <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Children's Privacy
+            Children&#39;s Privacy
           </h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             Our Service does not address anyone under the age of 13. We do not
@@ -648,7 +649,7 @@ export function Privacy() {
           <p className="text-gray-700 leading-relaxed mb-4">
             If We need to rely on consent as a legal basis for processing Your
             information and Your country requires consent from a parent, We may
-            require Your parent's consent before We collect and use that
+            require Your parent&#39;s consent before We collect and use that
             information.
           </p>
           <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
@@ -657,7 +658,7 @@ export function Privacy() {
           <p className="text-gray-700 leading-relaxed mb-4">
             Our Service may contain links to other websites that are not
             operated by Us. If You click on a third party link, You will be
-            directed to that third party's site. We strongly advise You to
+            directed to that third party&#39;s site. We strongly advise You to
             review the Privacy Policy of every site You visit.
           </p>
           <p className="text-gray-700 leading-relaxed mb-4">
@@ -674,8 +675,8 @@ export function Privacy() {
           </p>
           <p className="text-gray-700 leading-relaxed mb-4">
             We will let You know via email and/or a prominent notice on Our
-            Service, prior to the change becoming effective and update the "Last
-            updated" date at the top of this Privacy Policy.
+            Service, prior to the change becoming effective and update the
+            &#34;Last updated&#34; date at the top of this Privacy Policy.
           </p>
           <p className="text-gray-700 leading-relaxed mb-4">
             You are advised to review this Privacy Policy periodically for any
