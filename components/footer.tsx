@@ -14,7 +14,7 @@ export function Footer() {
           <div>
             <h4 className="text-lg font-bold mb-4">Links</h4>
             <Link
-              href="https://www.termsfeed.com/live/182a6b0c-cd50-4d75-b37f-8478c0bcd3bb"
+              href="/privacy"
               className="block text-white/80 hover:text-white transition-colors mb-2"
             >
               Privacy Policy
