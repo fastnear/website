@@ -46,9 +46,9 @@ export function Pricing() {
           {plans.map((plan, index) => (
             <Card
               key={index}
-              className={`relative ${
+              className={`relative shadow-lg ${
                 plan.featured
-                  ? "bg-gradient-to-br from-secondary to-primary text-white"
+                  ? "bg-gradient-to-br from-secondary to-primary text-white border-2 border-primary"
                   : ""
               }`}
             >
@@ -78,7 +78,7 @@ export function Pricing() {
                 </ul>
                 <Button
                   asChild
-                  className={`w-full ${
+                  className={`w-full hover:scale-105 transform transition-transform duration-200 ${
                     plan.featured
                       ? "bg-white text-secondary hover:bg-white/90"
                       : ""
