@@ -88,7 +88,7 @@ export function Services() {
           {services.map((service, index) => (
             <Card
               key={index}
-              className="group relative overflow-hidden border-t-4 border-transparent hover:border-primary hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+              className="group relative overflow-hidden border-t-4 border-transparent hover:border-primary hover:shadow-xl hover:-translate-y-0.5 transform transition-all duration-300"
             >
               <CardContent className="p-6 flex flex-col h-full min-h-[400px]">
                 <div className="text-primary mb-6">{service.icon}</div>
