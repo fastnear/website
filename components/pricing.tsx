@@ -6,8 +6,15 @@ const plans = [
     name: "Dev Plan",
     price: "$69",
     period: "/month",
-    features: ["10M RPC requests/month", "Shared RPC access", "Basic support"],
+    features: ["10M RPC requests/month", "One API key", "Basic support"],
     link: "https://buy.stripe.com/6oEdR0cfCe8L4GQdQQ",
+  },
+  {
+    name: "Pro Plan",
+    price: "$199",
+    period: "/month",
+    features: ["36M RPC requests/month", "One API key", "Priority support"],
+    link: "https://buy.stripe.com/4gMeVcgxJcAnfP41hg38402",
   },
   {
     name: "Business Plan",
@@ -15,21 +22,17 @@ const plans = [
     period: "/month",
     features: [
       "100M RPC requests/month",
-      "Dedicated RPC node",
+      "Multiple API keys",
       "Priority support",
     ],
     link: "https://buy.stripe.com/3cs9AK4Na8Ora1a8wx",
-    featured: true,
   },
   {
     name: "Enterprise",
     price: "Custom",
     period: "",
-    features: [
-      "Unlimited RPC requests",
-      "Multiple dedicated nodes",
-      "24/7 support",
-    ],
+    featured: true,
+    features: ["Unlimited RPC requests", "Custom endpoints", "24/7 support"],
     link: "https://forms.gle/DMuqD8WG4ag33beZ9",
   },
 ];
@@ -42,7 +45,7 @@ export function Pricing() {
           Simple, Transparent Pricing
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
           {plans.map((plan, index) => (
             <Card
               key={index}
