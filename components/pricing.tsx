@@ -88,7 +88,9 @@ export function Pricing() {
                   }`}
                 >
                   <a href={plan.link}>
-                    {plan.name === "Enterprise" ? "Contact Sales" : "Subscribe"}
+                    {plan.name === "Enterprise"
+                      ? "Contact Sales"
+                      : "Get Started"}
                   </a>
                 </Button>
               </CardContent>
