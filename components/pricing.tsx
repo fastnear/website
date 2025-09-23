@@ -7,14 +7,14 @@ const plans = [
     price: "$69",
     period: "/month",
     features: ["10M RPC requests/month", "One API key", "Basic support"],
-    link: "https://buy.stripe.com/6oEdR0cfCe8L4GQdQQ",
+    link: "https://dashboard.fastnear.com/login?redirect=/pricing",
   },
   {
     name: "Pro Plan",
     price: "$199",
     period: "/month",
     features: ["36M RPC requests/month", "One API key", "Priority support"],
-    link: "https://buy.stripe.com/4gMeVcgxJcAnfP41hg38402",
+    link: "https://dashboard.fastnear.com/login?redirect=/pricing",
   },
   {
     name: "Business Plan",
@@ -25,7 +25,7 @@ const plans = [
       "Multiple API keys",
       "Priority support",
     ],
-    link: "https://buy.stripe.com/3cs9AK4Na8Ora1a8wx",
+    link: "https://dashboard.fastnear.com/login?redirect=/pricing",
   },
   {
     name: "Enterprise",
@@ -88,7 +88,9 @@ export function Pricing() {
                   }`}
                 >
                   <a href={plan.link}>
-                    {plan.name === "Enterprise" ? "Contact Sales" : "Subscribe"}
+                    {plan.name === "Enterprise"
+                      ? "Contact Sales"
+                      : "Get Started"}
                   </a>
                 </Button>
               </CardContent>
