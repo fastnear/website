@@ -38,6 +38,12 @@ export function Navbar(props: { alwaysScrolled?: boolean }) {
           </Link>
           <div className="hidden lg:flex items-center gap-8">
             <Link
+              href="https://dashboard.fastnear.com/"
+              className="text-white hover:text-primary transition-colors"
+            >
+              Dashboard
+            </Link>
+            <Link
               href="https://docs.fastnear.com/"
               className="text-white hover:text-primary transition-colors"
             >
