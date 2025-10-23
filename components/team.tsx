@@ -2,26 +2,26 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import photoEugene from "@/app/images/team/eugene.jpg";
 import photoMike from "@/app/images/team/mike.jpg";
-import photoVlad from "@/app/images/team/vlad.jpg";
+import photoVadim from "@/app/images/team/vadim.jpg";
 
 const team = [
   {
-    name: "Evgeny Kuzyakov",
-    role: "Co-founder & CTO",
+    name: "Eugene",
+    role: "Hacker",
     image: photoEugene,
     bio: "Co-founder of FastNEAR and founder of NEAR.social. Previously worked at Proximity, NEAR Protocol, Google, and Facebook. Extensive experience in blockchain architecture and developer tooling.",
   },
   {
-    name: "Mike Purvis",
-    role: "Head of Infrastructure",
+    name: "Mike",
+    role: "Hacker",
     image: photoMike,
     bio: "Early NEAR ecosystem contributor with extensive blockchain infrastructure experience. Former web3 startup founder with VC backing. Expert in server management and validator operations, specializing in high-stakes migrations and security implementations.",
   },
   {
-    name: "Vlad Grichina",
-    role: "Chief Duct Tape Officer",
-    image: photoVlad,
-    bio: "Pioneer in NEAR ecosystem development tools and wallet infrastructure. Built early NEAR dev tools and contributed to core infrastructure. Previously at Human Guild, NEAR, and Google. Driving force behind Web4 and unstoppable websites.",
+    name: "Vadim",
+    role: "Hacker",
+    image: photoVadim,
+    bio: "Seasoned blockchain developer and infrastructure specialist. Skilled in building scalable, secure systems and optimizing performance for high-demand applications. Committed to privacy and security best practices in all projects.",
   },
 ];
 
