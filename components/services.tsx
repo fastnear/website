@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Database, MessageSquare, Eye, Server, Code } from "lucide-react";
+import { Database, MessageSquare, Eye, Server, Code, ArrowLeftRight } from "lucide-react";
 import Link from "next/link";
 
 const services = [
@@ -21,25 +21,25 @@ const services = [
     icon: <Database className="w-16 h-16" />,
     title: "NEARDATA",
     description:
-      "Free indexed blockchain data access for seamless development.",
+      "Streaming access to NEAR blockchain blocks and data through REST APIs.",
     features: [
-      "Free access to mainnet and testnet data",
+      "Finalized and optimistic block data as JSON",
+      "Transaction hashes included with receipts",
       "No authentication required",
-      "Efficient caching system",
     ],
-    link: "https://github.com/fastnear/neardata-server/",
+    link: "https://neardata.xyz/",
   },
   {
     icon: <Code className="w-16 h-16" />,
-    title: "Ultra-Fast API",
-    description: "Low-latency API optimized for wallets and explorers.",
+    title: "FastNear API",
+    description: "Low-latency API for wallets and explorers.",
     features: [
-      "Account ID mapping",
-      "Delegated staking pool information",
-      "Token data retrieval",
+      "Account and token balance lookups",
+      "Staking pool information",
+      "NFT and fungible token data",
       "Top holder analytics",
     ],
-    link: "https://github.com/fastnear/fastnear-api-server-rs",
+    link: "https://api.fastnear.com",
   },
   {
     icon: <MessageSquare className="w-16 h-16" />,
@@ -56,14 +56,25 @@ const services = [
   {
     icon: <Eye className="w-16 h-16" />,
     title: "Explorer API",
-    description: "Comprehensive blockchain explorer infrastructure.",
+    description: "Transaction and block data for blockchain explorers.",
     features: [
-      "Transaction details",
-      "Account information",
-      "Block data access",
-      "Receipt tracking",
+      "Transaction lookup by hash",
+      "Account transaction history with filtering",
+      "Block and receipt information",
+      "Cursor-based pagination",
     ],
-    link: "https://github.com/fastnear/explorer-api",
+    link: "https://tx.main.fastnear.com/",
+  },
+  {
+    icon: <ArrowLeftRight className="w-16 h-16" />,
+    title: "Transfers API",
+    description: "Query incoming and outgoing token transfers for any account.",
+    features: [
+      "Filter by time range, asset, and amount",
+      "Incoming and outgoing transfer direction",
+      "Support for native and token transfers",
+    ],
+    link: "https://transfers.main.fastnear.com/",
   },
 ];
 
