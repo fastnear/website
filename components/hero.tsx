@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="min-h-screen relative overflow-hidden bg-gradient-to-br from-[#00E5FF] via-[#0052CC] to-[#001F66] animate-gradient">
+    <section className="min-h-screen relative overflow-hidden bg-linear-to-br/srgb from-[#00E5FF] via-[#0052CC] to-[#001F66] animate-gradient">
       <div className="absolute inset-0 animate-float opacity-10">
         <svg
           viewBox="0 0 200 200"
@@ -30,7 +30,7 @@ export function Hero() {
       </div>
       <div className="container mx-auto px-4 md:px-6 relative z-10 flex items-center min-h-screen">
         <div className="max-w-3xl mx-auto text-start text-white pt-20">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-linear-to-r/srgb from-white to-gray-200 bg-clip-text text-transparent">
             The Fastest Gateway to NEAR Protocol
           </h1>
           <p className="text-xl md:text-2xl mb-8 opacity-90">
