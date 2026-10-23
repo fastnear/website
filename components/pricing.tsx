@@ -51,7 +51,7 @@ export function Pricing() {
               key={index}
               className={`relative shadow-lg ${
                 plan.featured
-                  ? "bg-gradient-to-br from-secondary to-primary text-white border-2 border-primary"
+                  ? "bg-linear-to-br/srgb from-secondary to-primary text-white border-2 border-primary"
                   : ""
               }`}
             >

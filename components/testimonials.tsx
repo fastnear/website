@@ -22,7 +22,7 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="py-24 bg-gradient-to-br from-secondary to-secondary/80 text-white">
+    <section className="py-24 bg-linear-to-br/srgb from-secondary to-secondary/80 text-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">What Our Customers Say</h2>
@@ -35,7 +35,7 @@ export function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <Card
               key={index}
-              className="bg-white/10 backdrop-blur border-0 text-white"
+              className="bg-white/10 backdrop-blur-sm border-0 text-white"
             >
               <CardContent className="p-6">
                 <div className="flex items-center gap-4 mb-4">
