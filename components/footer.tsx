@@ -6,7 +6,17 @@ export function Footer() {
       <div className="container mx-auto px-4 md:px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
-            <h4 className="text-lg font-bold mb-4">FastNear</h4>
+            <h4 className="text-lg font-bold mb-1">FastNEAR</h4>
+            <p className="text-white/80 mb-4">
+              a{" "}
+              <Link
+                href="https://svrn.net"
+                className="underline hover:text-white transition-colors"
+              >
+                SVRN
+              </Link>{" "}
+              company
+            </p>
             <p className="text-white/80">
               Building the future of NEAR Protocol infrastructure.
             </p>
@@ -33,7 +43,7 @@ export function Footer() {
                 href="https://x.com/fast_near"
                 className="block text-white/80 hover:text-white transition-colors"
               >
-                Twitter
+                X
               </Link>
               <Link
                 href="https://t.me/fast_near"
@@ -45,7 +55,8 @@ export function Footer() {
           </div>
         </div>
         <div className="text-center text-white/60 pt-8 border-t border-white/10">
-          <p>© {new Date().getFullYear()} FastNear. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} FastNEAR, a SVRN company. All
+            rights reserved.</p>
         </div>
       </div>
     </footer>

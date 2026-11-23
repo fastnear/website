@@ -31,7 +31,7 @@ const services = [
   },
   {
     icon: <Code className="w-16 h-16" />,
-    title: "FastNear API",
+    title: "FastNEAR API",
     description: "Low-latency API for wallets and explorers.",
     features: [
       "Account and token balance lookups",

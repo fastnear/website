@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "FASTNEAR - High-Performance NEAR Protocol Infrastructure",
+  title: "FastNEAR: High-Performance NEAR Protocol Infrastructure",
   description:
     "High-performance infrastructure enabling seamless blockchain interactions. Build faster, scale further, and innovate with confidence.",
   icons: "/favicon.png",
