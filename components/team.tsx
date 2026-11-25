@@ -1,27 +1,21 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import photoEugene from "@/app/images/team/eugene.jpg";
 import photoMike from "@/app/images/team/mike.jpg";
-import photoVadim from "@/app/images/team/vadim.jpg";
 
 const team = [
   {
     name: "Eugene",
-    role: "Hacker",
+    role: "Co-founder",
     image: photoEugene,
     bio: "Co-founder of FastNEAR and founder of NEAR.social. Previously worked at Proximity, NEAR Protocol, Google, and Facebook. Extensive experience in blockchain architecture and developer tooling.",
   },
   {
     name: "Mike",
-    role: "Hacker",
+    role: "Co-founder",
     image: photoMike,
     bio: "Early NEAR ecosystem contributor with extensive blockchain infrastructure experience. Former web3 startup founder with VC backing. Expert in server management and validator operations, specializing in high-stakes migrations and security implementations.",
-  },
-  {
-    name: "Vadim",
-    role: "Hacker",
-    image: photoVadim,
-    bio: "Seasoned blockchain developer and infrastructure specialist. Skilled in building scalable, secure systems and optimizing performance for high-demand applications. Committed to privacy and security best practices in all projects.",
   },
 ];
 
@@ -34,9 +28,19 @@ export function Team() {
           <p className="text-xl text-muted-foreground">
             Industry veterans building the future of blockchain infrastructure
           </p>
+          <p className="text-lg text-muted-foreground mt-4">
+            FastNEAR is a{" "}
+            <Link
+              href="https://svrn.net"
+              className="text-primary font-medium hover:underline"
+            >
+              SVRN
+            </Link>{" "}
+            company (NASDAQ: SVRN).
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {team.map((member, index) => (
             <Card key={index} className="bg-card">
               <CardContent className="p-6 text-center">
